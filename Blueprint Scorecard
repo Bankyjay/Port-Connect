@@ -1,0 +1,69 @@
+{
+ "identifier": "OpenPRScorecard",
+ "title": "Open PR Scorecard",
+ "levels": [
+   {
+     "color": "darkGray",
+     "title": "Basic"
+   },
+   {
+     "color": "bronze",
+     "title": "Bronze"
+   },
+   {
+     "color": "silver",
+     "title": "Silver"
+   },
+   {
+     "color": "gold",
+     "title": "Gold"
+   }
+ ],
+ "rules": [
+   {
+     "identifier": "goldLevel",
+     "title": "Count of pull requests below 5",
+     "level": "Gold",
+     "query": {
+       "combinator": "and",
+       "conditions": [
+         {
+           "operator": "<",
+           "property": "open_pr_count",
+           "value": 5
+         }
+       ]
+     }
+   },
+   {
+     "identifier": "silverLevel",
+     "title": "Count of pull requests below 10",
+     "level": "Silver",
+     "query": {
+       "combinator": "and",
+       "conditions": [
+         {
+           "operator": "<",
+           "property": "open_pr_count",
+           "value": 10
+         }
+       ]
+     }
+   },
+   {
+     "identifier": "bronzeLevel",
+     "title": "Count of pull requests below 15",
+     "level": "Bronze",
+     "query": {
+       "combinator": "and",
+       "conditions": [
+         {
+           "operator": "<",
+           "property": "open_pr_count",
+           "value": 15
+         }
+       ]
+     }
+   }
+ ]
+}
